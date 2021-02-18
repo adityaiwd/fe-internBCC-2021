@@ -6,7 +6,7 @@ This project was made for BCC's Frontend interhnship workshop
 
 - 👯 Clone this repo to your local machine using 
   ```shell
-  git clone https://github.com/adityaiwd/gojek-learnathome2nd-final-project.git
+  git clone https://github.com/adityaiwd/fe-internBCC-2021
   ```
   after cloning this repo, don't forget to install all of the dependencies using
   ```shell
