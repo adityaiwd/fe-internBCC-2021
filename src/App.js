@@ -1,14 +1,21 @@
-import React from 'react';
-import SplashScreen from "./components/SplashScreen";
-import GlobalStyle from "./theme/globalStyles"
+import React from "react";
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import GlobalStyle from "./theme/globalStyles";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (
-    <div style={{width:"100%",height:"100vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+    <Router>
       <GlobalStyle />
-      <SplashScreen />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

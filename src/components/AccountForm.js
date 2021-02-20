@@ -29,6 +29,7 @@ export const MainForm = styled.form`
 export const Title = styled.h1`
     font-size:4rem;
     font-weight:bold;
+    font-family:inherit;
 `
 
 export const Input = styled(TextField).attrs(() => ({
@@ -59,6 +60,7 @@ export const MainButton = styled.button`
 
     }
 `
+
 
 export const SecondaryButton = styled(Link)`
     background-color:#022B3A;
