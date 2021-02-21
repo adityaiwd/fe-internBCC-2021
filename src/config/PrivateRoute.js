@@ -1,12 +1,15 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { useAuth } from "./Auth";
 
 function PrivateRoute({ component: Component, ...rest }) {
-  
-  return(
-    <Route {...rest} render={(props) => (
-      <Component {...props} />
-    )}
+  const {authTokens}= useAuth();
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        authTokens ? <Component {...props} /> : <Redirect to="/login" />
+      }
     />
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import TwitterIcon from "@material-ui/icons/Twitter";
-
+import {useAuth} from "../config/Auth";
 
 const NavWrapper = styled.nav`
   position: fixed;
@@ -42,15 +42,21 @@ const NavItem = styled(Link)`
 `;
 
 const Navbar = () => {
+  const {setAuthTokens} = useAuth();
+
+  const Logout = () => {
+    setAuthTokens();
+    localStorage.clear();
+  }
 
   return ( 
-    <NavWrapper>
+    <NavWrapper >
         <NavContainer>
           <TwitterIcon style={{ fontSize: "4rem" }} />
           <div>
             <NavItem to="/">Home</NavItem>
             <NavItem to="/profile">Profile</NavItem>
-            <NavItem to="/login">
+            <NavItem onClick={Logout} to="/login">
               Logout
             </NavItem>
           </div>
